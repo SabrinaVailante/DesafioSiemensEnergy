@@ -8,6 +8,5 @@ public class ClienteResponse
     public string Sexo { get; set; }
     public string DataNascimento { get; set; }
     public int Idade { get; set; }
-
-    public Cidade cidade { get; set; }
+    public string cidade { get; set; }
 }

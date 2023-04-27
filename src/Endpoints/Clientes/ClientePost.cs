@@ -1,4 +1,5 @@
-﻿using DesafioSiemens.Dominio.Relacao;
+﻿using Azure;
+using DesafioSiemens.Dominio.Relacao;
 using DesafioSiemens.Infra.Dados;
 using IWantApp.Infra.Data;
 
@@ -12,8 +13,12 @@ public class ClientePost
 
     public static IResult Action(ClienteRequest clienteRequest, ApplicationDbContext context)
     {
-        var cidade = context.cidades.Where(c => c.Id == clienteRequest.cidade).FirstOrDefault();
-        
+        var cidade = context.cidades.Where(c => c.Id == clienteRequest.Cidade).FirstOrDefault();
+
+        if (cidade == null)
+        {
+            return Results.NotFound("Não foi encontrado uma cidade com esse ID");
+        }
 
         var cliente = new Cliente
         {

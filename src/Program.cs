@@ -28,11 +28,16 @@ app.MapMethods(CidadePost.Template, CidadePost.Methods, CidadePost.Handle);
 app.MapMethods(CidadePut.Template, CidadePut.Methods, CidadePut.Handle);
 app.MapMethods(CidadeGetAll.Template, CidadeGetAll.Methods, CidadeGetAll.Handle);
 app.MapMethods(CidadeDelete.Template, CidadeDelete.Methods, CidadeDelete.Handle);
+app.MapMethods(CidadeGetNome.Template, CidadeGetNome.Methods, CidadeGetNome.Handle);
+app.MapMethods(CidadeGetEstado.Template, CidadeGetEstado.Methods, CidadeGetEstado.Handle);
+
 
 app.MapMethods(ClientePost.Template, ClientePost.Methods, ClientePost.Handle);
 app.MapMethods(ClientePut.Template, ClientePut.Methods, ClientePut.Handle);
 app.MapMethods(ClienteGetAll.Template, ClienteGetAll.Methods, ClienteGetAll.Handle);
 app.MapMethods(ClienteDelete.Template, ClienteDelete.Methods, ClienteDelete.Handle);
+app.MapMethods(ClienteGetNome.Template, ClienteGetNome.Methods, ClienteGetNome.Handle);
+app.MapMethods(ClienteGetId.Template, ClienteGetId.Methods, ClienteGetId.Handle);
 
 app.Run();
 

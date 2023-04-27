@@ -11,7 +11,6 @@ namespace DesafioSiemens.Dominio.Relacao
         public string DataNascimento { get; set; }
         public int Idade { get; set; }
 
-        //[ForeignKey("CidadeId")]
         public Cidade Cidade { get; set; }
         
            

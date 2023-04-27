@@ -1,5 +1,5 @@
 ﻿using DesafioSiemens.Dominio.Relacao;
-using Microsoft.AspNetCore.Mvc;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace IWantApp.Infra.Data;
@@ -22,14 +22,7 @@ public class ApplicationDbContext : DbContext
             .Property(c => c.DataNascimento).IsRequired();
         builder.Entity<Cliente>()
             .Property(c => c.Idade).HasMaxLength(2);
-      /*  builder.Entity<Cliente>()
-    .HasOne(c => c.Cidade)
-    .WithMany()
-    .HasForeignKey(c => c.Cidade)
-    .OnDelete(DeleteBehavior.Restrict);*/
-
-
-
+   
         builder.Entity<Cidade>()
             .Property(e => e.Nome).IsRequired();
         builder.Entity<Cidade>()

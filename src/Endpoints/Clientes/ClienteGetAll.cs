@@ -1,6 +1,7 @@
 ﻿using DesafioSiemens.Dominio.Relacao;
 using DesafioSiemens.Infra.Dados;
 using IWantApp.Infra.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace DesafioSiemens.Endpoints.Clientes;
 
@@ -12,13 +13,13 @@ public class ClienteGetAll
 
     public static IResult Action( ApplicationDbContext context)
     {
-        var cliente = context.clientes.ToList();
-        return Results.NotFound(cliente);
-        var response = cliente.Select(c => new ClienteResponse { NomeCompleto = c.NomeCompleto, Sexo = c.Sexo, DataNascimento =  c.DataNascimento, Idade = c.Idade, cidade = c.Cidade  });
+        var cliente = context.clientes.Include(c => c.Cidade).ToList();
+        //return Results.NotFound(cliente);
+        var response = cliente.Select(c => new ClienteResponse { NomeCompleto = c.NomeCompleto, Sexo = c.Sexo, DataNascimento =  c.DataNascimento, Idade = c.Idade, cidade = c.Cidade.Nome  });
+
+        //var cliente = context.clientes.Include(c => c.Cidade).Where(c => c.NomeCompleto == Nome).FirstOrDefault();
         
 
-        context.SaveChanges();
-
-        return Results.Ok(cliente);
+        return Results.Ok(response);
     }
 }
