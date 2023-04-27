@@ -28,8 +28,7 @@ Observações
 
 - Construir um frontend é diferencial.
 
-- O desafio tem como únicas restrições utilizar as tecnologias .Net Core e Sql Server, exceto isso a imaginação é livre.
+- O desafio tem como únicas restrições utilizar as tecnologias .Net Core e Sql Server.
 
-- Não resolver o problema/desafio não é eliminatório para a vaga, queremos entender apenas a linha de raciocínio.
 
 
